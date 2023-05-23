@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Library Admin Panel</title>
+    <title>Arno sauniosios parduotuves admin panel</title>
 
     <link href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -63,9 +63,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/computers') }}" class="nav-link">
+                        <a href="{{ url('/admin/products') }}" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
-                            <p>Computers</p>
+                            <p>Products</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -75,15 +75,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/gadgets') }}" class="nav-link">
+                        <a href="{{ url('/admin/categories') }}" class="nav-link">
                             <i class="nav-icon fas fa-landmark"></i>
-                            <p>Gadgets</p>
+                            <p>Categories</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/type') }}" class="nav-link">
+                        <a href="{{ url('/admin/tags') }}" class="nav-link">
                             <i class="nav-icon fas fa-swatchbook"></i>
-                            <p>Types</p>
+                            <p>Tags</p>
                         </a>
                     </li>
                 </ul>
