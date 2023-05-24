@@ -41,7 +41,7 @@
                     <img src="/img/avatar2.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">
+                    <a href="profile" class="d-block">
                         @auth
                             {{ Auth::user()->name }}
                         @else
