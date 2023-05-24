@@ -29,8 +29,10 @@ Route::patch('/cart/{id}/update-quantity', [CartController::class, 'updateQuanti
 // Checkout route
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/checkout', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
-Route::post('/checkout/process', [CheckoutController::class, 'processCheckout'])->name('checkout.process');
-
+Route::get('/checkout/success', [CheckoutController::class, 'success'])->name('checkout.success');
+Route::get('/checkout/success', function () {
+    return view('pages.checkout_success');
+})->name('checkout.success');
 
 Route::middleware([
     'auth:sanctum',

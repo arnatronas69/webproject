@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,9 +9,8 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'item_name' ,
+        'item_name',
         'item_price',
-        'item_id',
         'first_name',
         'last_name',
         'email',
@@ -25,8 +23,10 @@ class Order extends Model
         // Add other order details fields here
     ];
 
-    public function item()
+    public function items()
     {
-        return $this->belongsTo(Product::class, 'item_id');
+        return $this->belongsToMany(Product::class)
+            ->withPivot('item_id', 'item_price')
+            ->withTimestamps();
     }
 }
