@@ -58,7 +58,7 @@ Route::get('/shop', [ShopController::class, 'index']);
 Route::get('/{id}', [DetailController::class, 'show'])->name('product.show');
 Route::get('/home', [HomeController::class, 'index']);
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('products', AdminProductController::class);
     Route::get('products/create', [AdminProductController::class, 'create'])->name('admin.products.create');
