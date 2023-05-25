@@ -12,12 +12,14 @@ use App\Http\Controllers\AdminManufacturerController;
 use App\Http\Controllers\AdminCategoryController;
 use App\Http\Controllers\AdminTagController;
 
+Route::redirect('/', '/home');
 Route::view('/', 'pages.home');
 Route::view('/home', 'pages.home');
 Route::view('/about', 'pages.about');
 Route::view('/contacts', 'pages.contacts')->name('contacts');
 Route::get('/admin', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 Route::view('/checkout', 'pages.checkout');
+Route::view('/dashboard', 'dashboard');
 
 Route::get('/cart', [CartController::class, 'viewCart'])->name('cart.view'); // Display cart
 Route::get('/cart/count', [CartController::class, 'getCartCount']); // Get cart count
