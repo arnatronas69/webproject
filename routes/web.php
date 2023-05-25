@@ -71,6 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::delete('products/{product}', [AdminProductController::class, 'destroy'])->name('admin.products.destroy');
     Route::put('products/{product}', [AdminProductController::class, 'update'])->name('admin.products.update');
     Route::post('/products', [AdminProductController::class, 'store'])->name('admin.products.store');
+    Route::get('products', [AdminProductController::class, 'index'])->name('admin.products.index');
     Route::resource('manufacturers', AdminManufacturerController::class);
     Route::get('manufacturers/create', [AdminManufacturerController::class, 'create'])->name('admin.manufacturers.create');
     Route::get('manufacturers/{manufacturer}', [AdminManufacturerController::class, 'show'])->name('admin.manufacturers.show');
@@ -78,6 +79,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::delete('manufacturers/{manufacturer}', [AdminManufacturerController::class, 'destroy'])->name('admin.manufacturers.destroy');
     Route::put('manufacturers/{manufacturer}', [AdminManufacturerController::class, 'update'])->name('admin.manufacturers.update');
     Route::post('/manufacturers', [AdminManufacturerController::class, 'store'])->name('admin.manufacturers.store');
+    Route::get('manufacturers', [AdminManufacturerController::class, 'index'])->name('admin.manufacturers.index');
     Route::resource('categories', AdminCategoryController::class);
     Route::get('categories/create', [AdminCategoryController::class, 'create'])->name('admin.categories.create');
     Route::get('categories/{category}', [AdminCategoryController::class, 'show'])->name('admin.categories.show');
@@ -85,6 +87,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::delete('categories/{category}', [AdminCategoryController::class, 'destroy'])->name('admin.categories.destroy');
     Route::put('categories/{category}', [AdminCategoryController::class, 'update'])->name('admin.categories.update');
     Route::post('/categories', [AdminCategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('categories', [AdminCategoryController::class, 'index'])->name('admin.categories.index');
     Route::resource('tags', AdminTagController::class);
     Route::get('tags/create', [AdminTagController::class, 'create'])->name('admin.tags.create');
     Route::get('tags/{tag}', [AdminTagController::class, 'show'])->name('admin.tags.show');
@@ -92,4 +95,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::delete('tags/{tag}', [AdminTagController::class, 'destroy'])->name('admin.tags.destroy');
     Route::put('tags/{tag}', [AdminTagController::class, 'update'])->name('admin.tags.update');
     Route::post('/tags', [AdminTagController::class, 'store'])->name('admin.tags.store');
+    Route::get('tags', [AdminTagController::class, 'index'])->name('admin.tags.index');
 });
